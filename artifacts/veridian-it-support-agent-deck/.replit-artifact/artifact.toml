@@ -1,0 +1,28 @@
+kind = "slides"
+previewPath = "/veridian-it-support-agent-deck/"
+title = "Veridian Internal IT Support Agent — Project Deck"
+description = "A project walkthrough of the Veridian Internal IT Support Agent, covering the assignment, policy-grounded routing, product surface, supplied operating data, and submission-ready MVP verification."
+version = "1.0.0"
+id = "artifacts/veridian-it-support-agent-deck"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/veridian-it-support-agent-deck/" ]
+localPort = 25299
+
+[services.development]
+run = "pnpm --filter @workspace/veridian-it-support-agent-deck run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/veridian-it-support-agent-deck", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/veridian-it-support-agent-deck/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25299"
+BASE_PATH = "/veridian-it-support-agent-deck/"

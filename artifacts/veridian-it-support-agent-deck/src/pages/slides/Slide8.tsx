@@ -1,0 +1,12 @@
+import { BrandLockup, Footer, Kicker } from '../../slideShared';
+
+export default function Slide8() {
+  return (
+    <div className="deck-slide relative h-screen w-screen overflow-hidden px-[6vw] py-[7vh]">
+      <div className="flex items-start justify-between"><div><BrandLockup /><Kicker>Delivery / verification</Kicker></div><span className="number-stamp">08</span></div>
+      <div className="mt-[2.8vh] grid grid-cols-[.8fr_1.45fr] gap-[5vw]"><div><h2 className="max-w-[28vw] text-[3.8vw] font-extrabold leading-[1.02] tracking-[-.07em] text-primary">Submission-ready MVP</h2><p className="mt-[2.3vh] max-w-[24vw] text-[1.6vw] leading-[1.45] text-muted">A working prototype with the complete assignment surface, not a placeholder.</p></div><div className="content-card rounded-[1.2vw] p-[1vw]"><div className="bullet-row"><span className="bullet-index">01</span><p className="m-0 text-[1.55vw] leading-[1.28] text-text">Responsive enterprise workspace with mobile navigation</p></div><div className="bullet-row"><span className="bullet-index">02</span><p className="m-0 text-[1.55vw] leading-[1.28] text-text">Search, filters, request and ticket detail views</p></div><div className="bullet-row"><span className="bullet-index">03</span><p className="m-0 text-[1.55vw] leading-[1.28] text-text">Deterministic local policy matcher for the supplied scenarios</p></div><div className="bullet-row"><span className="bullet-index">04</span><p className="m-0 text-[1.55vw] leading-[1.28] text-text">Decision Log persists in the browser without storing chain-of-thought</p></div><div className="bullet-row"><span className="bullet-index">05</span><p className="m-0 text-[1.55vw] leading-[1.28] text-text">TypeScript typecheck passes</p></div><div className="bullet-row"><span className="bullet-index">06</span><p className="m-0 text-[1.55vw] leading-[1.28] text-text">Production Vite build completes</p></div><div className="bullet-row"><span className="bullet-index">07</span><p className="m-0 text-[1.55vw] leading-[1.28] text-text">Dashboard and AI Support previews verified running cleanly</p></div></div></div>
+      <div className="absolute bottom-[12vh] left-[6vw] flex items-center gap-[1.1vw] text-[1.25vw] font-bold text-primary"><span className="h-[.7vw] w-[.7vw] rounded-full bg-accent" /> Veridian / internal IT support</div>
+      <Footer number="08" label="Delivery / verified" />
+    </div>
+  );
+}
