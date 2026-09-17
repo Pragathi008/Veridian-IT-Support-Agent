@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Veridian Internal IT Support Agent"
+description = "A policy-grounded internal IT support workspace for Veridian Corp. Employees can ask support questions, review requests and tickets, search the knowledge base, and inspect concise audit decisions."
+version = "1.0.0"
+id = "artifacts/veridian-it-support-agent"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18105
+
+[services.development]
+run = "pnpm --filter @workspace/veridian-it-support-agent run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/veridian-it-support-agent", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/veridian-it-support-agent/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18105"
+BASE_PATH = "/"
